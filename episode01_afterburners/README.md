@@ -11,6 +11,19 @@ generated procedurally from Python: aircraft, materials, afterburner, clouds, li
 | `scripts/` | The whole pipeline (see below) |
 | `previews/` | Look-development stills from the iteration passes |
 
+## Verified output
+
+| File | Codec | Resolution | FPS | Frames | Duration | Size |
+|---|---|---|---|---|---|---|
+| `EP01_Why_Fighter_Jets_Need_Afterburners.mp4` | H.264 High, yuv420p | 1080×1920 | 30 | 420 | 14.00 s | 38.1 MB |
+| `EP01_Why_Fighter_Jets_Need_Afterburners_clean.mp4` | H.264 High, yuv420p | 1080×1920 | 30 | 420 | 14.00 s | 39.8 MB |
+
+Checked with `ffprobe -count_frames`, and a full decode (`ffmpeg -v error -f null`) reports
+0 errors. Stills from the encoded video: `previews/final_video_stills.png`.
+
+Final render: about 2 h 10 min on 4 CPU cores (Cycles about 17 s/frame, with clouds and
+compositing running concurrently).
+
 ## Shots
 
 1. **Opening (0–5 s).** Chase camera behind and below the jet through a storm-cloud canyon at
